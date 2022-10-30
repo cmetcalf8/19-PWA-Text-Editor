@@ -19,6 +19,7 @@ export const putDb = async (content) => {
   const store = tx.objecStore('jate');
   const request = store.getAll();
   const result = await request;
+  console.log('Data saved', result);
   console.error('putDb not implemented');
 };
 
@@ -29,7 +30,9 @@ export const getDb = async () => {
   const store = tx.objecStore('jate');
   const request = store.getAll();
   const result = await request;
-  console.error('getDb not implemented');
+  console.log('result.value', result);
+  
+  return result;
 };
 
 initdb();
